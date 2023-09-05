@@ -28,7 +28,7 @@ if uploaded_file is not None:
     img_array = image.img_to_array(image1)
     img_array = np.expand_dims(img_array, axis=0)
     img_array = img_array/255.0
-    predictions = model.predict(img_array)
+    predictions = local_model().predict(img_array)
     label=l[np.argmax(predictions)]
 
 
