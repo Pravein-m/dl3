@@ -8,14 +8,13 @@ st.title("Shoe Classification")
 
 st.write("Predict the shoe that is being represented in the image.")
 import urllib.request
-@st.experimental_singleton
 def load_model():
     if not os.path.isfile('model.h5'):
         urllib.request.urlretrieve('https://github.com/Pravein-m/dl3/blob/5949d91f1adf00eb97f2d98ff0f1b9d0a0147c62/model.h5', 'model.h5')
     return tensorflow.keras.models.load_model('model.h5')
-model = model.h5
+
 # model = load_model("model.h5")
-# l=['Adidas','Nike']
+l=['Adidas','Nike']
 
 # model = load_model("model.h5")
 
@@ -55,7 +54,7 @@ if sample_img_choice:
     img_array = image.img_to_array(image1)
     img_array = np.expand_dims(img_array, axis=0)
     img_array = img_array/255.0
-    predictions = model.predict(img_array)
+    predictions = local_model().predict(img_array)
     label=l[np.argmax(predictions)]
     st.markdown(
         f"<h2 style='text-align: center;'>{label}</h2>",
