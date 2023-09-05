@@ -7,11 +7,17 @@ import numpy as np
 st.title("Shoe Classification")
 
 st.write("Predict the shoe that is being represented in the image.")
+import urllib.request
+@st.experimental_singleton
+def load_model():
+    if not os.path.isfile('model.h5'):
+        urllib.request.urlretrieve('https://github.com/Pravein-m/dl3/blob/5949d91f1adf00eb97f2d98ff0f1b9d0a0147c62/model.h5', 'model.h5')
+    return tensorflow.keras.models.load_model('model.h5')
 
-model = load_model("model.h5")
-l=['Adidas','Nike']
+# model = load_model("model.h5")
+# l=['Adidas','Nike']
 
-model = load_model("model.h5")
+# model = load_model("model.h5")
 
 uploaded_file = st.file_uploader(
     "Upload an image of a seed :", type="jpg"
