@@ -16,14 +16,14 @@ import pathlib
 from keras.models import load_model
 import matplotlib.image as mpimg
 
-st.title("emotion detection")
+st.title("shoe detection")
 
-st.write("Predict the emotion that is being represented in the image.")
+st.write("Predict the shoe that is being represented in the image.")
 
 model = load_model("model.h5")
 l=[ 'Adidas','Nike']
 uploaded_file = st.file_uploader(
-    "Upload an image of a emotion :", type="jpg"
+    "Upload an image of a shoe :", type="jpg"
 )
 predictions=-1
 if uploaded_file is not None:
