@@ -12,12 +12,16 @@ st.write("Predict the shoe that is being represented in the image.")
 # Define a function to load the model
 @st.cache(allow_output_mutation=True)
 def load_shoe_model():
-    if not os.path.isfile('model.h5'):
-        urllib.request.urlretrieve('https://github.com/Pravein-m/dl3/blob/5949d91f1adf00eb97f2d98ff0f1b9d0a0147c62/model.h5', 'model.h5')
-    return load_model('model.h5')
+    model_path = 'model.h5'  # Update this path to the correct location of your 'model.h5' file
+    if not os.path.isfile(model_path):
+        urllib.request.urlretrieve('https://github.com/Pravein-m/dl3/blob/5949d91f1adf00eb97f2d98ff0f1b9d0a0147c62/model.h5', model_path)
+    return load_model(model_path)
 
 model = load_shoe_model()
 class_labels = ['Adidas', 'Nike']
+
+# The rest of your code remains the same.
+
 
 uploaded_file = st.file_uploader("Upload an image of a shoe:", type=["jpg", "jpeg", "png"])
 
