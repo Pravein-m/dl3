@@ -14,7 +14,7 @@ st.write("Predict the shoe that is being represented in the image.")
 def load_shoe_model():
     model_path = 'model.h5'  # Update this path to the correct location of your 'model.h5' file
     if not os.path.isfile(model_path):
-        urllib.request.urlretrieve('https://github.com/Pravein-m/dl3/blob/5949d91f1adf00eb97f2d98ff0f1b9d0a0147c62/model.h5', model_path)
+        urllib.request.urlretrieve('https://github.com/Pravein-m/dl3/blob/5949d91f1adf00eb97f2d98ff0f1b9d0a0147c62/model.h5', model.h5)
     return load_model(model_path)
 
 # Load the model
