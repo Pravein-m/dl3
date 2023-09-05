@@ -17,11 +17,9 @@ def load_shoe_model():
         urllib.request.urlretrieve('https://github.com/Pravein-m/dl3/blob/5949d91f1adf00eb97f2d98ff0f1b9d0a0147c62/model.h5', model_path)
     return load_model(model_path)
 
+# Load the model
 model = load_shoe_model()
 class_labels = ['Adidas', 'Nike']
-
-# The rest of your code remains the same.
-
 
 uploaded_file = st.file_uploader("Upload an image of a shoe:", type=["jpg", "jpeg", "png"])
 
@@ -44,7 +42,7 @@ else:
 # Provide an option to use a sample image
 sample_img_choice = st.button("Use Sample Image")
 if sample_img_choice:
-    sample_image_path = "sample_image.jpg"  # Provide the path to your sample image
+    sample_image_path = "sample_image.jpg"  # Update this with the correct path to your sample image
     sample_image = Image.open(sample_image_path)
     sample_image = sample_image.resize((224, 224))
     sample_img_array = image.img_to_array(sample_image)
