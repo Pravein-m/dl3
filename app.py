@@ -1,7 +1,7 @@
 import streamlit as st
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.models import load_model
-from utils import predict_label
+#from utils import predict_label
 from PIL import Image
 import numpy as np
 st.title("Seed Classification")
