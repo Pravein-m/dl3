@@ -24,7 +24,7 @@ def prediction():
     st.write("Predict the Rice image that is being represented in the image")
     
     # Define the input fields
-    model = load_model("cnn.h5")
+    model = load_model("model.h5")
 
 
     
