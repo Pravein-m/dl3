@@ -1,3 +1,2 @@
 streamlit
 tensorflow
-os==3.8
