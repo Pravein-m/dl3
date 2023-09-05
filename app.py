@@ -18,21 +18,6 @@ from keras.models import load_model
 import matplotlib.image as mpimg
 
 
-# Define the home function
-def home():
-    st.write("## Introduction")
-    st.write("This app uses  convolutional neural network  to classify variety rice image into five different class category")
-   
-    
-    st.write("This Data contains around 75k images of size 50x50 distributed under 5 categories.")
-    st.write("'Five' -> 0")
-    st.write("'Zero' -> 1")
-    st.write("'Two' -> 2")
-    st.write("'Four' -> 3")
-    st.write("'One' -> 4")
-    st.write("'Three' -> 5")
-
-
 # Define the prediction function
 def prediction():
     
@@ -56,7 +41,7 @@ def prediction():
         predictions = model.predict(img_array)
     st.write("### Prediction Result")
     if st.button("Predict"): 
-        labels = {0:"Five",1:"Zero",2:"Two",3:"Four",4:"One",5:"Three"}
+        labels = {"Adidas","Nike"}
         if prediction!=-1:
             if uploaded_file is not None:
                 image1 = Image.open(uploaded_file)
